@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import  GenerateEmployee  from  './componentsEmployee/GenerateEmployee';
 import  DisplayEmployee  from  './componentsEmployee/DisplayEmployee';
@@ -30,7 +29,7 @@ const sampleQuote = {
   quote: "Shoplifting is a victimless crime, like punching someone in the dark."
 }
 
-class App extends Component {
+class SimpsonFetch extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,7 +56,7 @@ class App extends Component {
       .then(response  =>  response.json())
       .then(data  => {
         this.setState({
-          descriptQuote:  data[0],
+          descriptQuote: data[0],
         });
     });
 }
@@ -65,21 +64,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-
+        <div className='pb-5'>
+          <h1><i className="fas fa-random"></i> Random fetch</h1>
+          <p>Cliquez sur les boutons pour générer un nouvel employé ou une nouvelle citation des simpsons, depuis une API.</p>
+          <h3 className='mb-5'>Enjoy ! <i className="far fa-thumbs-up"></i></h3>
+        </div>
+        <hr />
         <GenerateEmployee  selectEmployee={() =>  this.getEmployee()}  />
         <DisplayEmployee  employee={this.state.employee}  />
         <hr />
@@ -90,4 +80,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default SimpsonFetch;

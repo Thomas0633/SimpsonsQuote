@@ -4,8 +4,8 @@ import './DisplayEmployee.css';
 const  DisplayEmployee = ({ employee }) => {
     return (
         <div  className="DisplayEmployee containerEmployee">
-            <img  src={employee.picture.medium}  alt="picture"  />
-            <ul>
+            <img  src={employee.picture.medium}  alt="Employé"  />
+            <ul className='list-display-employee'>
                 <li>Gender : {employee.gender}</li>
                 <li>
                     Name : {employee.name.title}  {employee.name.last}{' '}

@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Button } from 'reactstrap';
 
 const ButtonSimpson = ({ selectQuote }) => {
     return (
-        <div>
-            <button onClick={selectQuote}>New quote</button>
-        </div>
+      <div>
+        <Button color="success" onClick={selectQuote}>New quote</Button>
+      </div>
     )
 }
 
